@@ -15,7 +15,12 @@ I'd like to see if a bike works
 
 domain model
 ------------------------------------------
-bike  				-->		working?
+bike  						-->		working?
 ------------------------------------------
 docking_station  	-->		release_bike
+									--		have a default capacity
+------------------------------------------
+default capacity	--		can be change
+------------------------------------------
+bike  						-->   can dock
 ------------------------------------------
