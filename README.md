@@ -16,11 +16,15 @@ I'd like to see if a bike works
 domain model
  ------------------------------------------
 bike  						-->		working?
+									-->		broken?
+									-->		can be reported broken
  ------------------------------------------
 docking_station  	-->		release_bike
 									--		have a default capacity
+									-->		do not release broken bikes
  ------------------------------------------
 default capacity	--		can be change
  ------------------------------------------
 bike  						-->   can dock
+									 |-		eighter broken or working
  ------------------------------------------
