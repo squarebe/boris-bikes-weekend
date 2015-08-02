@@ -11,9 +11,13 @@ class DockingStation
 	end
 
   def release_bike
-    fail 'No bikes available' if empty?
-    # raises an error if bikes array is empty.
-    @bikes.pop #release the last bike added.
+  	bikes.each_index do |b| 
+      if bikes[b].working?
+        return bikes.slice!(b)
+      end
+    end
+    fail 'No bikes available'
+    # raises an error if bikes array is emptyor no bikes avalable.
   end
 
   def dock bike

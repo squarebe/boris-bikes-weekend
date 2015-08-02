@@ -23,6 +23,12 @@ describe DockingStation do
     	# {} makes the prg runs code inside first then the outside ones,
     	# important at fail msg raise not to break the prg.
     end
+
+    it 'do not release broken bikes' do
+      bike = double :bike, working?: false
+      subject.dock(bike)
+      expect { subject.release_bike}.to raise_error 'No bikes available'
+    end
   end
 
   describe 'dock' do
