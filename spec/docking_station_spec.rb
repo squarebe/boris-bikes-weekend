@@ -1,4 +1,5 @@
 require 'docking_station'
+require 'support/shared_examples_for_bike_container'
 
 describe DockingStation do
 
@@ -44,5 +45,7 @@ describe DockingStation do
   	end
 
   end
+
+  it_behaves_like BikeContainer
 
 end
