@@ -18,7 +18,7 @@ describe DockingStation do
   end
 
   it 'has a default capacity' do
-    expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
+    expect(subject.capacity).to eq BikeContainer::DEFAULT_CAPACITY
   end
 
   describe '#release bike' do # #is an instance variable
@@ -30,7 +30,7 @@ describe DockingStation do
     end
 
     it 'do not release broken bikes' do
-      bike = double :bike, working?: false
+      bike = double :bike, broken?: true
       subject.dock(bike)
       expect { subject.release_bike }.to raise_error 'No bikes available'
     end
@@ -41,7 +41,7 @@ describe DockingStation do
 
   	it 'raises an error when full' do
   		20.times { subject.dock :bike }
-  		expect {subject.dock :bike }.to raise_error 'Docking station full'
+  		expect {subject.dock :bike }.to raise_error 'DockingStation full'
   	end
 
   end
